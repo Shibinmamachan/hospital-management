@@ -226,10 +226,12 @@ router.get('/appointments/history', verifyToken, async (req, res) => {
       appointmentDate.setHours(hour, minute);
 
       return {
-        doctorName: appt.doctor_id.name, 
-        date: appointmentDate.toISOString().split('T')[0], 
-        time: appt.time,
-      };
+  id: appt._id,
+  doctorName: appt.doctor_id.name,
+  date: appointmentDate.toISOString().split('T')[0],
+  time: appt.time,
+};
+
     });
 
     res.status(200).json({ data: appointments });
@@ -239,23 +241,16 @@ router.get('/appointments/history', verifyToken, async (req, res) => {
   }
 });
 // Cancel a specific appointment
-router.delete('/appointments/:date/:time', verifyToken, async (req, res) => {
-  const { date, time } = req.params;
+router.delete('/appointments/:id', verifyToken, async (req, res) => {
+  const { id } = req.params;
 
   try {
     const user = await User.findById(req.userId);
-
-    if (!user) {
-      return res.status(404).json({ message: "User not found." });
-    }
+    if (!user) return res.status(404).json({ message: "User not found." });
 
     const originalLength = user.appointment.length;
 
-    // Normalize date format before comparing
-    user.appointment = user.appointment.filter((appt) => {
-      const apptDate = new Date(appt.date).toISOString().split('T')[0];
-      return !(apptDate === date && appt.time === time);
-    });
+    user.appointment = user.appointment.filter((appt) => appt._id.toString() !== id);
 
     if (user.appointment.length === originalLength) {
       return res.status(404).json({ message: "Appointment not found." });
@@ -268,6 +263,7 @@ router.delete('/appointments/:date/:time', verifyToken, async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 });
+
 
 // GET /users/profile - Get current user's profile
 router.get('/users/profile', verifyToken, async (req, res) => {

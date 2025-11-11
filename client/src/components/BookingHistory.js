@@ -52,24 +52,22 @@ const BookingHistory = () => {
       });
   };
 
-  const handleCancelAppointment = (date, time) => {
+  const handleCancelAppointment = (id) => {
     const token = localStorage.getItem("token");
-  
+
     if (!token) {
       setError("You must be logged in to cancel appointments.");
       return;
     }
-  
+
     axios
-      .delete(`http://localhost:3000/users/appointments/${encodeURIComponent(date)}/${encodeURIComponent(time)}`, {
+      .delete(`http://localhost:3000/users/appointments/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
       .then(() => {
-        setUpcomingAppointments((prev) =>
-          prev.filter((appt) => !(appt.date === date && appt.time === time))
-        );
+        setUpcomingAppointments((prev) => prev.filter((appt) => appt.id !== id));
         setSuccessMessage("Appointment cancelled successfully.");
       })
       .catch((err) => {
@@ -77,53 +75,52 @@ const BookingHistory = () => {
         setError("Failed to cancel the appointment. Please try again.");
       });
   };
-  
 
+  // ✅ MAKE SURE RETURN IS INSIDE THE FUNCTION
   return (
     <div>
-      <Navbar></Navbar>
-    <div className="history-container">
-      <h1>Appointment History</h1>
-      {error && <p className="error">{error}</p>}
-      {successMessage && <p className="success">{successMessage}</p>}
+      <Navbar />
+      <div className="history-container">
+        <h1>Appointment History</h1>
+        {error && <p className="error">{error}</p>}
+        {successMessage && <p className="success">{successMessage}</p>}
 
-      <div className="section">
-        <h2>Past Appointments</h2>
-        {pastAppointments.length === 0 ? (
-          <p>No past appointments found.</p>
-        ) : (
-          pastAppointments.map((appt, index) => (
-            <div key={index} className="appointment-card past">
-              <p><strong>Doctor:</strong> {appt.doctorName}</p>
-              <p><strong>Date:</strong> {appt.date}</p>
-              <p><strong>Time:</strong> {appt.time}</p>
-            </div>
-          ))
-        )}
+        <div className="section">
+          <h2>Past Appointments</h2>
+          {pastAppointments.length === 0 ? (
+            <p>No past appointments found.</p>
+          ) : (
+            pastAppointments.map((appt, index) => (
+              <div key={index} className="appointment-card past">
+                <p><strong>Doctor:</strong> {appt.doctorName}</p>
+                <p><strong>Date:</strong> {appt.date}</p>
+                <p><strong>Time:</strong> {appt.time}</p>
+              </div>
+            ))
+          )}
+        </div>
+
+        <div className="section">
+          <h2>Upcoming Appointments</h2>
+          {upcomingAppointments.length === 0 ? (
+            <p>No upcoming appointments scheduled.</p>
+          ) : (
+            upcomingAppointments.map((appt, index) => (
+              <div key={index} className="appointment-card upcoming">
+                <p><strong>Doctor:</strong> {appt.doctorName}</p>
+                <p><strong>Date:</strong> {appt.date}</p>
+                <p><strong>Time:</strong> {appt.time}</p>
+                <button
+                  className="cancel-button"
+                  onClick={() => handleCancelAppointment(appt.id)}
+                >
+                  Cancel
+                </button>
+              </div>
+            ))
+          )}
+        </div>
       </div>
-
-      <div className="section">
-        <h2>Upcoming Appointments</h2>
-        {upcomingAppointments.length === 0 ? (
-          <p>No upcoming appointments scheduled.</p>
-        ) : (
-          upcomingAppointments.map((appt, index) => (
-            <div key={index} className="appointment-card upcoming">
-              <p><strong>Doctor:</strong> {appt.doctorName}</p>
-              <p><strong>Date:</strong> {appt.date}</p>
-              <p><strong>Time:</strong> {appt.time}</p>
-              <button
-  className="cancel-button"
-  onClick={() => handleCancelAppointment(appt.date, appt.time)}
->
-  Cancel
-</button>
-
-            </div>
-          ))
-        )}
-      </div>
-    </div>
     </div>
   );
 };
