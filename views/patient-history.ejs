@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient History</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 900px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .patient-info {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .patient-info strong {
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Patient History</h2>
+        
+        <!-- Patient Info -->
+        <div class="patient-info">
+            <p><strong>Patient Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+        </div>
+
+        <!-- History Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Doctor Name</th>
+                    <th>Department</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Visit 1 -->
+                <tr>
+                    <td>Dr. Sarah Lee</td>
+                    <td>Cardiology</td>
+                    <td>2025-04-01</td>
+                </tr>
+
+                <!-- Example Visit 2 -->
+                <tr>
+                    <td>Dr. James Smith</td>
+                    <td>Neurology</td>
+                    <td>2024-12-15</td>
+                </tr>
+
+                <!-- Example Visit 3 -->
+                <tr>
+                    <td>Dr. Emily Johnson</td>
+                    <td>Orthopedics</td>
+                    <td>2024-07-22</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Back Button -->
+        <a href="patient-list.html" class="back-btn">Back to Patient List</a>
+    </div>
+
+</body>
+</html>

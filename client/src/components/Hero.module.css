@@ -1,0 +1,50 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://tse3.mm.bing.net/th/id/OIP.1zYfTjt8Klw9opP3_SVPlwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.content h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    
+}
+
+.btn {
+    padding: 10px 25px;
+    background-color: #00aaff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}

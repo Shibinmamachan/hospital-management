@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Report</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 900px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Doctor Report</h2>
+        
+        <!-- Report Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Doctor Name</th>
+                    <th>Department</th>
+                    <th>Patient Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Doctor 1 -->
+                <tr>
+                    <td>Dr. Sarah Lee</td>
+                    <td>Cardiology</td>
+                    <td>120</td>
+                </tr>
+
+                <!-- Example Doctor 2 -->
+                <tr>
+                    <td>Dr. James Smith</td>
+                    <td>Neurology</td>
+                    <td>95</td>
+                </tr>
+
+                <!-- Example Doctor 3 -->
+                <tr>
+                    <td>Dr. Emily Johnson</td>
+                    <td>Orthopedics</td>
+                    <td>75</td>
+                </tr>
+                
+                <!-- Example Doctor 4 -->
+                <tr>
+                    <td>Dr. Michael Brown</td>
+                    <td>Pediatrics</td>
+                    <td>45</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Back Button -->
+        <a href="doctor-list.html" class="back-btn">Back to Doctor List</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .btn-add {
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .btn-add:hover {
+            background-color: #007B8A;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e9e9e9;
+        }
+        .btn {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 2px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-edit {
+            background-color: #ffa500;
+        }
+        .btn-edit:hover {
+            background-color: #e68a00;
+        }
+        .btn-delete {
+            background-color: #f44336;
+        }
+        .btn-delete:hover {
+            background-color: #da190b;
+        }
+        .btn-view {
+            background-color: #2196F3;
+        }
+        .btn-view:hover {
+            background-color: #1e88e5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Doctor List</h1>
+
+    <!-- Add Doctor Button -->
+    <a href="appoinments.ejs" class="btn-add">Add Doctor</a>
+
+    <!-- Doctor List Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dr. John Smith</td>
+                <td>
+                    <a href="#" class="btn btn-view">View</a>
+                    <a href="#" class="btn btn-edit">Edit</a>
+                    <a href="#" class="btn btn-delete">Delete</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Dr. Emily White</td>
+                <td>
+                    <a href="#" class="btn btn-view">View</a>
+                    <a href="#" class="btn btn-edit">Edit</a>
+                    <a href="#" class="btn btn-delete">Delete</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Dr. Michael Johnson</td>
+                <td>
+                    <a href="#" class="btn btn-view">View</a>
+                    <a href="#" class="btn btn-edit">Edit</a>
+                    <a href="#" class="btn btn-delete">Delete</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Dr. Sarah Lee</td>
+                <td>
+                    <a href="#" class="btn btn-view">View</a>
+                    <a href="#" class="btn btn-edit">Edit</a>
+                    <a href="#" class="btn btn-delete">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

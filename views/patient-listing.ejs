@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Listing</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 900px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 8px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .enable-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .disable-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .history-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .enable-btn:hover, .disable-btn:hover, .history-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Patient Listing</h2>
+        
+        <!-- Patient Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Patient 1 -->
+                <tr>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>
+                        <button class="enable-btn" onclick="enablePatient()">Enable</button>
+                        <button class="disable-btn" onclick="disablePatient()">Disable</button>
+                        <button class="history-btn" onclick="viewHistory()">History</button>
+                    </td>
+                </tr>
+
+                <!-- Example Patient 2 -->
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>jane.smith@example.com</td>
+                    <td>
+                        <button class="enable-btn" onclick="enablePatient()">Enable</button>
+                        <button class="disable-btn" onclick="disablePatient()">Disable</button>
+                        <button class="history-btn" onclick="viewHistory()">History</button>
+                    </td>
+                </tr>
+
+                <!-- Example Patient 3 -->
+                <tr>
+                    <td>Emily Johnson</td>
+                    <td>emily.johnson@example.com</td>
+                    <td>
+                        <button class="enable-btn" onclick="enablePatient()">Enable</button>
+                        <button class="disable-btn" onclick="disablePatient()">Disable</button>
+                        <button class="history-btn" onclick="viewHistory()">History</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function enablePatient() {
+            alert("Patient enabled");
+        }
+
+        function disablePatient() {
+            alert("Patient disabled");
+        }
+
+        function viewHistory() {
+            alert("Viewing patient history");
+        }
+    </script>
+
+</body>
+</html>

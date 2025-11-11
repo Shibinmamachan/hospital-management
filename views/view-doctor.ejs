@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Doctor</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Doctor Image Styling */
+        .doctor-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        /* Doctor Info Styling */
+        .doctor-info {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Button Styling */
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Button Hover Styling */
+        .back-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>View Doctor</h2>
+        
+        <!-- Doctor Image -->
+        <img src="doctor-image.jpg" alt="Doctor Image" class="doctor-image">
+
+        <!-- Doctor Details -->
+        <div class="doctor-info">
+            <strong>Doctor Name:</strong> Dr. John Doe
+        </div>
+        <div class="doctor-info">
+            <strong>Qualification:</strong> MBBS, MD
+        </div>
+        <div class="doctor-info">
+            <strong>Experience:</strong> 10 years
+        </div>
+
+        <!-- Back Button -->
+        <a href="doctor-list.html" class="back-btn">Back to Doctor List</a>
+    </div>
+
+</body>
+</html>

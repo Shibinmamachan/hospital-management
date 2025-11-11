@@ -1,0 +1,14 @@
+.Home {
+font-family: 'Segoe UI', sans-serif;
+    color: #9d2c2c;
+    scroll-behavior: smooth;
+
+    background-image: url('/public/hospital.jpg');
+    /* or external URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+
+}

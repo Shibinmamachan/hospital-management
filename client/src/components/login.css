@@ -1,0 +1,63 @@
+
+.login-container {
+  background-image: url("https://tse3.mm.bing.net/th/id/OIP.UjZHgQ27X_DjchIfbPVXeAHaFX?rs=1&pid=ImgDetMain&o=7&rm=3");
+    /* ✅ Replace with actual path */
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #db3f3f;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(160, 45, 45, 0.1);
+  background-color: rgba(255, 255, 255, 0.95);
+  /* translucent white */
+}
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #af1515;
+    border-radius: 4px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #c5c6c7;
+  }
+    .log {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      /* background-image: url("https://th.bing.com/th/id/R.2c4fa4949f4dc9f663d8c0b67b69526c?rik=60RV50eDVqV%2fZQ&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fd%2fe%2fa%2f1473311-gorgerous-high-quality-desktop-wallpapers-1920x1200-for-macbook.jpg&ehk=MLS33MxpUTxFtAf5KdQ6SE8liQjKOHVKzl%2b2U83FXbk%3d&risl=&pid=ImgRaw&r=0"); */
+      /* ✅ Replace with actual path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
