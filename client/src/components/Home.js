@@ -4,6 +4,7 @@ import Header from './Header'
 import Hero from './Hero';
 import About from './About';
 import Services from './Services';
+import Doctors from './Doctors';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -14,6 +15,7 @@ function Home() {
       <Hero />
       <About />
       <Services />
+      <Doctors />
       <Contact />
       <Footer />
     </div>

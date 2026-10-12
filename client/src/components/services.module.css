@@ -1,0 +1,457 @@
+.page {
+    --navy: #093b6b;
+    --teal: #079e95;
+    --muted: #64788d;
+    color: var(--navy);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+    padding: 80px max(24px, calc((100% - 1160px) / 2));
+    background: linear-gradient(120deg, #effbff, #dff7f3);
+}
+
+.heroContent {
+    animation: slideIn 0.8s ease both;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(38px, 4.5vw, 60px);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+    color: var(--teal);
+}
+
+.heroContent>p {
+    max-width: 520px;
+    margin: 22px 0 28px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.heroButton,
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 23px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #0aada3, #087f91);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 8px 20px #079e952b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.heroButton:hover,
+.ctaButton:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px #079e9540;
+}
+
+.heroVisual {
+    position: relative;
+    min-height: 300px;
+    display: grid;
+    place-items: center;
+    animation: fadeIn 1s ease both;
+}
+
+.circle {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #bdeee8, #71d4ca);
+    animation: float 5s ease-in-out infinite;
+}
+
+.medicalIcon {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 175px;
+    height: 175px;
+    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--teal);
+    font-size: 100px;
+    box-shadow: 0 20px 60px #093b6b1c;
+    transform: rotate(-8deg);
+}
+
+.heroCard {
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 13px;
+    background: white;
+    box-shadow: 0 12px 35px #093b6b1c;
+    animation: float 4s ease-in-out infinite;
+}
+
+.heroCard>span {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #dff8f3;
+    color: var(--teal);
+    font-size: 28px;
+}
+
+.heroCard strong {
+    font-size: 13px;
+}
+
+.heroCard p {
+    margin: 5px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* Services grid */
+.servicesSection {
+    max-width: 1200px;
+    margin: auto;
+    padding: 85px 24px;
+}
+
+.sectionHeading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.sectionHeading .eyebrow {
+    margin-bottom: 10px;
+}
+
+.sectionHeading h2 {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 42px);
+}
+
+.sectionHeading>p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 23px;
+}
+
+.card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 21px;
+    border: 1px solid #e4f0f0;
+    border-radius: 17px;
+    background: white;
+    box-shadow: 0 5px 22px #093b6b08;
+    opacity: 0;
+    animation: cardReveal 0.6s ease forwards;
+    animation-delay: var(--delay, 0ms);
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #a8e3dc;
+    box-shadow: 0 18px 38px #093b6b13;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.serviceIcon {
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 17px;
+    background: #e4f8f5;
+    font-size: 29px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .serviceIcon {
+    transform: rotate(-7deg) scale(1.08);
+}
+
+.arrow {
+    color: #94b8bd;
+    font-size: 22px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .arrow {
+    color: var(--teal);
+    transform: translate(3px, -3px);
+}
+
+.tag {
+    align-self: flex-start;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #f0faf8;
+    color: var(--teal);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.card h3 {
+    margin: 14px 0 10px;
+    font-size: 18px;
+}
+
+.card>p {
+    margin: 0 0 22px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    flex-grow: 1;
+}
+
+.learnMore {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding-top: 15px;
+    border-top: 1px solid #edf3f4;
+    color: var(--teal);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.learnMore:hover {
+    color: var(--navy);
+}
+
+/* Bottom CTA */
+.cta {
+    max-width: 1152px;
+    margin: 0 auto 75px;
+    padding: 38px 35px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #093b6b, #087f91);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.ctaEyebrow {
+    color: #9bf0e3;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.cta h2 {
+    margin: 12px 0;
+    font-size: clamp(24px, 3vw, 34px);
+}
+
+.cta p {
+    margin: 0;
+    max-width: 580px;
+    color: #d4e8f1;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.ctaButton {
+    flex-shrink: 0;
+    background: white;
+    color: var(--navy);
+    box-shadow: none;
+}
+
+.ctaButton:hover {
+    background: #e7fbf7;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes cardReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    transform: translateY(18px);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding-top: 65px;
+        padding-bottom: 65px;
+        gap: 20px;
+    }
+
+    .cta {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 20px;
+    }
+
+    .heroContent {
+        text-align: center;
+    }
+
+    .heroContent>p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .heroVisual {
+        min-height: 260px;
+    }
+
+    .circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .medicalIcon {
+        width: 145px;
+        height: 145px;
+        font-size: 80px;
+    }
+
+    .heroCard {
+        right: 0;
+        bottom: 0;
+    }
+
+    .servicesSection {
+        padding: 60px 18px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .card {
+        padding: 23px;
+    }
+
+    .cta {
+        margin: 0 18px 50px;
+        padding: 30px 22px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .content,
+    .heroContent,
+    .heroVisual,
+    .circle,
+    .heroCard,
+    .card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
